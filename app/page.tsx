@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 import { Dialog, Disclosure } from '@headlessui/react'
-import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BookOpenIcon, ChartBarIcon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import {
   ArrowPathIcon,
   CheckIcon,
-  CloudArrowUpIcon,
+  BoltIcon,
   Cog6ToothIcon,
   FingerPrintIcon,
   LockClosedIcon,
@@ -24,35 +24,20 @@ const navigation = [
 ]
 const features = [
   {
-    name: 'Push to deploy.',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-    icon: CloudArrowUpIcon,
+    name: 'Quick and Easy.',
+    description: 'Use ⌘ + J or ctrl + J to bring up the menu window. You can quickly access links and also write in quick journal entries so you can journal from wherever you are in the app.',
+    icon: BoltIcon ,
   },
   {
-    name: 'SSL certificates.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
+    name: 'Analytics.',
+    description: 'Built in Analytics to see what your frequent thinking patterns are, how many entries you have created and see the overall sentiment of your journal entries.',
+    icon: ChartBarIcon,
   },
   {
-    name: 'Simple queues.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-    icon: ArrowPathIcon,
-  },
-  {
-    name: 'Advanced security.',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-    icon: FingerPrintIcon,
-  },
-  {
-    name: 'Powerful API.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: Cog6ToothIcon,
-  },
-  {
-    name: 'Database backups.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-    icon: ServerIcon,
-  },
+    name: 'Resources',
+    description: 'Over time Avy will create personalised resources based on your stats. Resources will range from breathwork exercises to journaling exercies and articles.',
+    icon: BookOpenIcon,
+  }
 ]
 
 const faqs = [
@@ -85,16 +70,12 @@ const faqs = [
   
 ]
 const footerNavigation = {
-  solutions: [
-    { name: 'Insights', href: '#' },
-  ],
   support: [
-    { name: 'Contact', href: '#' }, 
+    { name: 'Contact', href: 'mailto:support@avy.xyz' }, 
   ],
   company: [
     { name: 'About', href: '#' },
     { name: 'Blog', href: '#' },
-    { name: 'Contact', href: '#' },
   ],
   legal: [
     { name: 'Privacy', href: '/policy' },
@@ -137,11 +118,11 @@ export default function Index() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
+            {/* {navigation.map((item) => (
               <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
                 {item.name}
               </Link>
-            ))}
+            ))} */}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <Link href="/login" className="text-sm font-semibold leading-6 text-white">
@@ -173,7 +154,7 @@ export default function Index() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
+                  {/* {navigation.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
@@ -181,7 +162,7 @@ export default function Index() {
                     >
                       {item.name}
                     </Link>
-                  ))}
+                  ))} */}
                 </div>
                 <div className="py-6">
                   <Link
@@ -200,10 +181,11 @@ export default function Index() {
       <main>
         {/* Hero section */}
         <div className="relative isolate overflow-hidden bg-gray-900 pb-16 pt-14 sm:pb-20">
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2830&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+          <Image
+            src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/Boliviainteligente_3D_Render.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9Cb2xpdmlhaW50ZWxpZ2VudGVfM0RfUmVuZGVyLmpwZyIsImlhdCI6MTcxNjY2Nzg3MywiZXhwIjoxNzQ4MjAzODczfQ.xL4mF0ppKsRZ1e5ZiWWYtGSmQZrEpG0cJ87kRH6FBoQ&t=2024-05-25T20%3A11%3A13.223Z"
             alt=""
-            className="absolute inset-0 -z-10 h-full w-full object-cover"
+            className="absolute inset-0 -z-10 h-full w-full object-cover backdrop-blur-sm opacity-65"
+            fill={true}
           />
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -220,9 +202,9 @@ export default function Index() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
               <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-white/10 hover:ring-white/20">
                   Read our story and what we're about.{' '}
-                  <Link href="#" className="font-semibold text-white">
+                  <Link href="/about" className="font-semibold text-white">
                     <span className="absolute inset-0" aria-hidden="true" />
                     Read more <span aria-hidden="true">&rarr;</span>
                   </Link>
@@ -342,7 +324,7 @@ export default function Index() {
                   </p>
                 </blockquote>
                 <figcaption className="mt-8 text-base">
-                  <div className="font-semibold text-white">Judith Black</div>
+                
 
                 </figcaption>
               </figure>
@@ -390,23 +372,25 @@ export default function Index() {
         </h2>
         <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
+            <Image
               className="h-7"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-              alt="Company name"
+              src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/Avy_LogoWhite.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9BdnlfTG9nb1doaXRlLnBuZyIsImlhdCI6MTcxNjY3MDcyOCwiZXhwIjoxNzQ4MjA2NzI4fQ.boZvczsy8CfK56UHkQ6-xte-ezMKs3YTMWb6Hopx07g&t=2024-05-25T20%3A58%3A48.812Z"
+              alt="Avy"
+              width={56}
+              height={28}
             />
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                  {/* <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3> */}
                   <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.solutions.map((item) => (
+                    {/* {footerNavigation.solutions.map((item) => (
                       <li key={item.name}>
                         <Link href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                           {item.name}
                         </Link>
                       </li>
-                    ))}
+                    ))} */}
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
