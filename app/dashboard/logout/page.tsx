@@ -18,7 +18,7 @@ export default async function Logout() {
         const logout = async () => {
             let { error } = await supabase.auth.signOut()
             router.push('/')
-            toast.info('Sign out succesfull, see you soon :)')
+            toast.info('Sign out succesful, see you soon :)')
             if(error) {
                 console.error(error)
             }
