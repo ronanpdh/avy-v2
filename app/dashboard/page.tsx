@@ -32,7 +32,7 @@ const features = [
 ]
 
 
-export default async function Dashboard({ children }: { children: React.ReactNode }) {
+export default async function Dashboard() {
   const supabase = createClient();
 
   const {
