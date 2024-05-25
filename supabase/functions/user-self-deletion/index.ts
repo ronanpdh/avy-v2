@@ -3,15 +3,19 @@
 // This enables autocomplete, go to definition, etc.
 
 // Setup type definitions for built-in Supabase Runtime APIs
-/// <reference types="https://esm.sh/@supabase/functions-js/src/edge-runtime.d.ts" />
+///<reference types="https://esm.sh/@supabase/functions-js/src/edge-runtime.d.ts" />
+// <reference path=".next/types/edge-runtime.d.ts" />
 
 import { serve } from 'https://deno.land/std@0.182.0/http/server.ts'
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.14.0'
-import { corsHeaders } from '../_shared/cors.ts'
+import { createClient } from '@supabase/supabase-js'
+import { corsHeaders } from '../_shared/cors'
+
+import process from 'node:process'
+
 
 console.log(`Function "user-self-deletion" up and running!`)
 
-serve(async (req: Request) => {
+Deno.serve(async (req: Request) => {
   // This is needed if you're planning to invoke your function from a browser.
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
