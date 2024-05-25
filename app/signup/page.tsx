@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "../login/submit-button";
+import Image from "next/image";
 
 export default function SignUp({
     searchParams,
@@ -26,7 +27,8 @@ export default function SignUp({
         });
 
         if (error) {
-            return redirect("/login?message=Could not authenticate user");
+            console.log(error)
+            return redirect("/signup?message=Could not authenticate user");
         }
 
         return redirect("/login?message=Check email to continue sign in process");
@@ -35,10 +37,12 @@ export default function SignUp({
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <img
+                <Image
                     className="mx-auto h-10 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Your Company"
+                    src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/avylogolg.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9hdnlsb2dvbGcud2VicCIsImlhdCI6MTcxNjY1MDk1MCwiZXhwIjoxNzQ4MTg2OTUwfQ.1bKpQot4M_BKuQgBeM4ObTPGp1tZ7EBDn0drToZqz8g&t=2024-05-25T15%3A29%3A10.322Z"
+                    alt="AVY Logo"
+                    width={1000}
+                    height={1000}
                 />
                 <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
                     Sign Up
@@ -46,7 +50,7 @@ export default function SignUp({
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                <form className="space-y-6" action="#" method="POST">
+                <form className="space-y-6" action="submit" method="POST">
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
                             Email address
@@ -68,11 +72,6 @@ export default function SignUp({
                             <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
                                 Password
                             </label>
-                            <div className="text-sm">
-                                <a href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
-                                    Forgot password?
-                                </a>
-                            </div>
                         </div>
                         <div className="mt-2">
                             <input
@@ -85,17 +84,37 @@ export default function SignUp({
                             />
                         </div>
                     </div>
+                    <div className="relative flex items-start">
+                        <div className="flex h-6 items-center">
+                            <input
+                                id="terms"
+                                aria-describedby="terms-confirmation"
+                                name="terms"
+                                type="checkbox"
+                                required
+                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                            />
+                        </div>
+                        <div className="ml-3 text-sm leading-6">
+                            <label htmlFor="terms" className="font-medium text-white">
+                               Agree to <Link href="/terms-of-service" target="_blank"><span className="text-indigo-200 underline ">Terms of Service</span></Link>
+                            </label>
+                            <p id="terms-description" className="text-gray-500">
+                                Please confirm you have read and agree with our terms of service. 
+                            </p>
+                        </div>
+                    </div>
 
                     <div>
                         <SubmitButton
                             formAction={signUp}
-                            className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
+                            className="border border-foreground/20 rounded-md px-4 py-2 text-white mb-2"
                             pendingText="Signing Up..."
                         >
                             Sign Up
                         </SubmitButton>
                         {searchParams?.message && (
-                            <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
+                            <p className="mt-4 p-4 bg-foreground/10 text-red-200 text-center">
                                 {searchParams.message}
                             </p>
                         )}

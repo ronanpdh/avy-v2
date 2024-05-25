@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "./submit-button";
+import Image from "next/image";
+
 
 export default function Login({
   searchParams,
@@ -32,10 +34,12 @@ export default function Login({
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <img
+          <Image
             className="mx-auto h-10 w-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-            alt="Your Company"
+            src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/avylogolg.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9hdnlsb2dvbGcud2VicCIsImlhdCI6MTcxNjY1MDk1MCwiZXhwIjoxNzQ4MTg2OTUwfQ.1bKpQot4M_BKuQgBeM4ObTPGp1tZ7EBDn0drToZqz8g&t=2024-05-25T15%3A29%3A10.322Z"
+            alt="AVY Logo"
+            width={1000}
+            height={1000}
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
             Sign in to your account
@@ -66,9 +70,9 @@ export default function Login({
                   Password
                 </label>
                 <div className="text-sm">
-                  <a href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
+                  <Link href="#" className="font-semibold text-indigo-400 hover:text-indigo-300">
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="mt-2">
@@ -91,14 +95,19 @@ export default function Login({
               >
                 Sign In
               </SubmitButton>
+              {searchParams?.message && (
+                <p className="mt-4 p-4 bg-foreground/10 text-red-200 font-semibold text-center">
+                  {searchParams.message}
+                </p>
+              )}
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-400">
             Not a member?{' '}
-            <a href="/signup" className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
+            <Link href="/signup" className="font-semibold leading-6 text-indigo-400 hover:text-indigo-300">
               Sign Up Now
-            </a>
+            </Link>
           </p>
         </div>
       </div>

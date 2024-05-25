@@ -19,30 +19,40 @@ export default function PasswordUpdate() {
         setNewPassword(passwordInput);
     }
 
-    // Update email Function
+    // Update Password Function
     async function updatePassword() {
         const { data, error } = await supabase.auth.updateUser({
             password: newPassword,
         })
         if (error) {
-            console.log(`Error updating email: ${error}`)
+            console.log(`Error updating password: ${error}`)
+            toast.error(`Error updating password: ${error}`)
+        } else if (!error) {
+            toast.success('Password Updated successfully');
         }
+
         return data;
     }
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
         try {
-            if (newPassword !== undefined || '') {
-                updatePassword();
-                setNewPassword('')
-                toast.success('Password Updated successfully')
+            if (newPassword && newPassword.trim() !== '') {
+                updatePassword()
+                    .then(() => {
+                        setNewPassword('');                        
+                    })
+                    .catch((error) => {
+                        console.log('Updating Password didn\'t work', error);
+                        toast.error('Could not update password.');
+                    });
             } else {
-                console.log('Could not Update Password')
-                toast.error('Could not update user email. Please ensure you\'re using a valid address.')
+                console.log('Password is empty');
+                toast.error('Password cannot be empty.');
             }
         } catch (error) {
-            console.log('Updating Password didnt work' + error)
+            console.log('Updating Password didn\'t work', error);
+            toast.error('Could not update password.');
         }
     }
     return (
@@ -65,8 +75,8 @@ export default function PasswordUpdate() {
                             value={newPassword}
                             onChange={passwordInputHandler}
                             className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="Somethingthatisntpassword123"
-                        />
+                            placeholder="Password123!@"
+                        ></input>
                     </div>
                     <button
                         type="submit"
