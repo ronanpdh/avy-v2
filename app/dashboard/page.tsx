@@ -52,9 +52,8 @@ export default async function Dashboard() {
             Your Journey Starts Here
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            I built this application to gain a great understanding of how my mind works and to allow myself to notice patterns of negative thinking. I hope it can provide some helpful insight into yourself.<br></br>
+            Avy is a journaling app designed to help you understand and improve your mental well-being. By analyzing your journal entries for sentiment and cognitive distortions, Avy provides you with valuable insights to recognize and challenge distorted thinking patterns.<br></br>
           </p>
-          <p className="mt-6 text-lg leading-8 text-gray-600 font-semibold italic">This isn't medical advice and shouldn't be followed as such. Please consult a professional for any advice. </p>
         </div>
         <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-12 lg:max-w-none lg:grid-cols-3">

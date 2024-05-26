@@ -206,7 +206,7 @@ export default function Analytics() {
             </div>
             <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8 mt-12">
                 {/* Left column */}
-                <div className="grid grid-cols-1 gap-4 lg:col-span-1 h-full bg-white/40">
+                <div className="grid grid-cols-1 gap-4 lg:col-span-2 h-full bg-white/40">
                     <section aria-labelledby="section-1-title">
                         <h2 className="sr-only text-gray-700" id="section-1-title">
                             Distortions and Sentiment
@@ -228,7 +228,8 @@ export default function Analytics() {
                                                 cornerRadius: 5,
                                                 startAngle: -90,
                                                 endAngle: 180,
-                                                cx: 200,
+                                                
+                                                cx: 300,
                                                 cy: 300,
                                             }
                                         ]}
@@ -236,7 +237,7 @@ export default function Analytics() {
                                         width={500}
                                         slotProps={{
                                             legend: {
-                                                hidden: false, labelStyle: { fontSize: 14, fill: 'gray' }, direction: 'column', position: { vertical: 'top', horizontal: 'left' },
+                                                hidden: false, labelStyle: { fontSize: 14, fill: 'gray' }, direction: 'row', position: { vertical: 'top', horizontal: 'left' },
                                                 itemMarkWidth: 20,
                                                 itemMarkHeight: 2,
                                                 markGap: 5,
@@ -297,16 +298,7 @@ export default function Analytics() {
                         </div>
                     </section>
                 </div>
-                <div className="grid grid-cols-1 gap-4 h-full bg-white/65">
-                    <section aria-labelledby="section-2-title">
-                        <h2 className="sr-only" id="section-2-title">
-                            Journal Entry
-                        </h2>
-                        <div className="overflow-hidden rounded-lg shadow h-full">
-
-                        </div>
-                    </section>
-                </div>
+                
             </div >
         </>
     )

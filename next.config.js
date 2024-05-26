@@ -9,6 +9,12 @@ const nextConfig = {
                 port: '',
                 pathname: '/storage/**'
             },
+            {
+                protocol: 'https',
+                hostname: 'www.loom.com',
+                port: '',
+                pathname: '/embed/'
+            }
         ],
     },
 };

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { Dialog, Disclosure } from '@headlessui/react'
 import { Bars3Icon, BookOpenIcon, ChartBarIcon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import {
@@ -26,7 +26,7 @@ const features = [
   {
     name: 'Quick and Easy.',
     description: 'Use ⌘ + J or ctrl + J to bring up the menu window. You can quickly access links and also write in quick journal entries so you can journal from wherever you are in the app.',
-    icon: BoltIcon ,
+    icon: BoltIcon,
   },
   {
     name: 'Analytics.',
@@ -67,11 +67,11 @@ const faqs = [
     Start Your Journey with Confidence
     With Avy, you can journal with peace of mind, knowing that we prioritize your privacy and security every step of the way.`,
   },
-  
+
 ]
 const footerNavigation = {
   support: [
-    { name: 'Contact', href: 'mailto:support@avy.xyz' }, 
+    { name: 'Contact', href: 'mailto:support@avy.xyz' },
   ],
   company: [
     { name: 'About', href: '#' },
@@ -224,7 +224,7 @@ export default function Index() {
                   >
                     Get started
                   </Link>
-                  <Link href="#" className="text-sm font-semibold leading-6 text-white">
+                  <Link href="#demo" className="text-sm font-semibold leading-6 text-white">
                     Live demo <span aria-hidden="true">→</span>
                   </Link>
                 </div>
@@ -258,7 +258,7 @@ export default function Index() {
           <div className="relative overflow-hidden pt-16">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <Image
-                src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/home-screenshot.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9ob21lLXNjcmVlbnNob3QucG5nIiwiaWF0IjoxNzE2NjE0MzM3LCJleHAiOjE3NDgxNTAzMzd9.gY-ZjL4fbzEGdp-JGBbTjfrlpBobgse0VGDm_G_ZIyc&t=2024-05-25T05%3A18%3A58.028Z"
+                src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/home-screenshot.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9ob21lLXNjcmVlbnNob3QucG5nIiwiaWF0IjoxNzE2Njg0Mjk2LCJleHAiOjE3NDgyMjAyOTZ9.wY3-3_0HgoHQyRHUvCi0XZpZkdcMJ8zNhsK1llohLGk&t=2024-05-26T00%3A44%3A56.807Z"
                 alt="App screenshot"
                 className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 width={2432}
@@ -320,17 +320,27 @@ export default function Index() {
                 </svg>
                 <blockquote className="text-xl font-semibold leading-8 text-white sm:text-2xl sm:leading-9">
                   <p>
-                  Unlock a healthier mindset with Avy, the intelligent journaling app that analyzes your entries for sentiment and cognitive distortions. Gain insights, recognize patterns, and cultivate a more positive outlook.
+                    Unlock a healthier mindset with Avy, the intelligent journaling app that analyzes your entries for sentiment and cognitive distortions. Gain insights, recognize patterns, and cultivate a more positive outlook.
                   </p>
                 </blockquote>
                 <figcaption className="mt-8 text-base">
-                
+
 
                 </figcaption>
               </figure>
             </div>
           </div>
         </div>
+        {/* Video Demo Section */}
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-48 h-3/4" id="demo">
+          <div className="mx-auto max-w-6xl h-3/4 flex justify-center items-center">
+            <Suspense fallback={<p>Loading Video...</p>}>
+              <iframe loading="lazy" width="640" height="400" src="https://www.loom.com/embed/809f2467b4b044fa86a280e5b3d64836?sid=9f3deec1-67f1-47d3-a4ee-f3e7635e8b67" frameBorder="0" allowFullScreen></iframe>
+            </Suspense>
+          </div>
+        </div>
+
 
         {/* FAQ section */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
@@ -363,10 +373,10 @@ export default function Index() {
             </dl>
           </div>
         </div>
-      </main>
+      </main >
 
       {/* Footer */}
-      <footer className="mt-32 bg-gray-900 sm:mt-56" aria-labelledby="footer-heading">
+      < footer className="mt-32 bg-gray-900 sm:mt-56" aria-labelledby="footer-heading" >
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
@@ -435,7 +445,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   )
 }

@@ -122,7 +122,7 @@ export default function About() {
                         <div className="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
                             <Image
                                 className="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0"
-                                src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/Solen_Feyissa_Texture_Pattern.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9Tb2xlbl9GZXlpc3NhX1RleHR1cmVfUGF0dGVybi5qcGciLCJpYXQiOjE3MTY2NzEwMTMsImV4cCI6MTc0ODIwNzAxM30.Wjr_2a_Vy6mSSMDud14iD4C9r5OCgF2zt2fzw9fQxKI&t=2024-05-25T21%3A03%3A33.664Z"
+                                src="https://omaccpaiarzuaiddlzne.supabase.co/storage/v1/object/sign/company%20assets/avydashboard.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJjb21wYW55IGFzc2V0cy9hdnlkYXNoYm9hcmQud2VicCIsImlhdCI6MTcxNjY4NDAwNiwiZXhwIjoxNzQ4MjIwMDA2fQ.qdE31W_UYcv9Hd-uPXerfCoSBTO4kG_-nDKIgIkOMbk&t=2024-05-26T00%3A40%3A06.709Z"
                                 alt="gradient"
                                 fill={true}
                             />
@@ -132,7 +132,7 @@ export default function About() {
                                 aria-hidden="true"
                             >
                                 <div
-                                    className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-40"
+                                    className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-80"
                                     style={{
                                         clipPath:
                                             'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -151,7 +151,7 @@ export default function About() {
                                 <img src="" alt="" className="h-12 w-auto" />
                                 <blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
                                     <p>
-                                        AVY
+                                    identifying patterns is a crucial first step towards self-awareness.
                                     </p>
                                 </blockquote>
                                 <figcaption className="mt-6 text-sm leading-6 text-gray-300">
