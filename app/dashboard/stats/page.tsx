@@ -103,10 +103,13 @@ export default function Analytics() {
 
     const setPieDataFunction = (distortionTypes: DistortionTypes[]) => {
 
+        // Filter out undefined or empty distortion types
+        const filteredDistortionTypes = distortionTypes.filter(item => item.distortion !== undefined && item.distortion !== '');
+
         // create Map object to aggregate all distortion types 
         const distortionMap = new Map<string, PieData>()
 
-        distortionTypes.forEach((item) => {
+        filteredDistortionTypes.forEach((item) => {
             if (distortionMap.has(item.distortion)) {
                 const existingItem = distortionMap.get(item.distortion);
                 if (existingItem) {
@@ -159,7 +162,7 @@ export default function Analytics() {
         );
         setPieDataFunction(distortionTypes);
         countFunction();
-        overallSentimentFunction(); 
+        overallSentimentFunction();
     }
 
 
@@ -190,18 +193,18 @@ export default function Analytics() {
                         <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">{overallCount}</dd>
                     </div>
                     <div className={clsx(
-                        "overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6", 
+                        "overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6",
                         {
                             'bg-gradient-to-r from-teal-200 to-teal-500 text-white': overallSentiment?.label === "Positive",
                             'bg-gradient-to-r from-rose-400 to-red-500 text-white': overallSentiment?.label === "Negative",
                             'bg-gradient-to-r from-blue-200 to-cyan-200 text-white': overallSentiment?.label === "Neutral"
                         }
                     )}
-                        >
+                    >
                         <dt className="truncate text-sm font-medium">Overall Sentiment</dt>
                         <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">{overallSentiment?.label}</dd>
                     </div>
-                    
+
                 </dl>
             </div>
             <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8 mt-12">
@@ -228,7 +231,7 @@ export default function Analytics() {
                                                 cornerRadius: 5,
                                                 startAngle: -90,
                                                 endAngle: 180,
-                                                
+
                                                 cx: 300,
                                                 cy: 300,
                                             }
@@ -298,7 +301,7 @@ export default function Analytics() {
                         </div>
                     </section>
                 </div>
-                
+
             </div >
         </>
     )
