@@ -28,7 +28,7 @@ export default function SignUp({
 
         if (error) {
             console.log(error)
-            return redirect("/signup?message=Could not authenticate user");
+            return redirect("/signup?message=Couldn't sign up. Please check your email and make sure your password includes 8 characters, a symbol, number and uppercase letter.");
         }
 
         return redirect("/login?message=Check email to continue sign in process");
