@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router'
 import JournalCmd from '@/components/journal/JournalCmd'
 import Image from 'next/image'
+import BugReport from '@/components/bugs/BugReport'
 
 const navigation = [
     { name: 'Home', href: '/dashboard', current: true },
@@ -192,6 +193,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
 
                             <h1 className="text-3xl font-bold tracking-tight text-white">{ }</h1>
+                            <BugReport />
 
                         </div>
                     </header>

@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import JournalCmd from "@/components/journal/JournalCmd";
 import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon } from '@heroicons/react/20/solid'
 import { BookOpenIcon, ChartBarIcon, FaceSmileIcon } from "@heroicons/react/24/outline";
+import BugReport from "@/components/bugs/BugReport";
 
 const features = [
   {
@@ -45,6 +46,7 @@ export default async function Dashboard() {
 
   return (
     <div className="bg-white sm:py-32 w-fit">
+      {/* <BugReport /> */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-6xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-indigo-600">AVY</h2>
