@@ -44,7 +44,7 @@ export default function SignUp({
                     width={1000}
                     height={1000}
                 />
-                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">
+                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight dark:text-white text-black">
                     Sign Up
                 </h2>
             </div>
@@ -52,7 +52,7 @@ export default function SignUp({
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" action="submit" method="POST">
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">
+                        <label htmlFor="email" className="block text-sm font-medium leading-6 dark:text-white text-black">
                             Email address
                         </label>
                         <div className="mt-2">
@@ -62,14 +62,14 @@ export default function SignUp({
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                className="block w-full rounded-md border-0 bg-white/5 py-1.5 dark:text-white text-black shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
 
                     <div>
                         <div className="flex items-center justify-between">
-                            <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
+                            <label htmlFor="password" className="block text-sm font-medium leading-6 dark:text-white text-black">
                                 Password
                             </label>
                         </div>
@@ -80,7 +80,7 @@ export default function SignUp({
                                 type="password"
                                 autoComplete="current-password"
                                 required
-                                className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                                className="block w-full rounded-md border-0 bg-white/5 py-1.5 dark:text-white text-black shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -96,7 +96,7 @@ export default function SignUp({
                             />
                         </div>
                         <div className="ml-3 text-sm leading-6">
-                            <label htmlFor="terms" className="font-medium text-white">
+                            <label htmlFor="terms" className="font-medium dark:text-white text-black">
                                Agree to <Link href="/terms-of-service" target="_blank"><span className="text-indigo-200 underline ">Terms of Service</span></Link>
                             </label>
                             <p id="terms-description" className="text-gray-500">
@@ -108,7 +108,7 @@ export default function SignUp({
                     <div>
                         <SubmitButton
                             formAction={signUp}
-                            className="border border-foreground/20 rounded-md px-4 py-2 text-white mb-2"
+                            className="border border-foreground/20 rounded-md px-4 py-2 dark:text-white text-black mb-2"
                             pendingText="Signing Up..."
                         >
                             Sign Up
