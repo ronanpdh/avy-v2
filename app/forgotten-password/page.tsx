@@ -21,7 +21,7 @@ export default function ForgottenPassword() {
             return redirect("/login?message=Could not authenticate user");
         }
 
-        return redirect("/dashboard");
+        return redirect("/");
     };
 
     return (
