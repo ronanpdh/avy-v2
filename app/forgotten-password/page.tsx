@@ -18,10 +18,10 @@ export default function ForgottenPassword() {
         })
 
         if (error) {
-            return redirect("/login?message=Could not authenticate user");
+            return redirect("/login?message=Could not find user with that email");
         }
 
-        return redirect("/dashboard");
+        return redirect("/");
     };
 
     return (
@@ -64,7 +64,7 @@ export default function ForgottenPassword() {
                                 className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
                                 pendingText="Sending email..."
                             >
-                                Sign In
+                                Reset Password
                             </SubmitButton>                            
                         </div>
                     </form>
