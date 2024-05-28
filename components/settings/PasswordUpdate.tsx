@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 import { useState } from "react";
 import { MouseEvent } from "react";
 import { toast } from "sonner";
+import { redirect } from "next/navigation";
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -31,7 +32,7 @@ export default function PasswordUpdate() {
             toast.success('Password Updated successfully');
         }
 
-        return data;
+        return redirect("/login");
     }
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -40,7 +41,7 @@ export default function PasswordUpdate() {
             if (newPassword && newPassword.trim() !== '') {
                 updatePassword()
                     .then(() => {
-                        setNewPassword('');                        
+                        setNewPassword('');
                     })
                     .catch((error) => {
                         console.log('Updating Password didn\'t work', error);
